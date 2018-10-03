@@ -1,0 +1,72 @@
+#include<stdio.h>
+#include<string.h>
+#include<iostream>
+#include<stack>
+using namespace std;
+
+int main(void)
+{
+    char st;
+    stack<char>p;
+
+    while(st = getchar())
+    {
+        if(st >= 'a' && st <= 'z')
+        {
+            cout << st;
+        }
+
+        else if(st == '+' || st == '-')
+        {
+            if(!p.empty() && p.top() != '(')
+            {
+                cout << p.top();
+                p.pop();
+            }
+
+            p.push(st);
+        }
+
+        else if(st == '(')
+        {
+            p.push(st);
+        }
+
+        else if(st == '*' || st == '/')
+        {
+            if(!p.empty() && p.top() != '(' && (p.top() == '*' || p.top() == '/'))
+            {
+                cout << p.top();
+                p.pop();
+            }
+
+            p.push(st);
+        }
+
+        else if(st == ')')
+        {
+            while(!p.empty() && p.top() != '(')
+            {
+                cout << p.top();
+                p.pop();
+            }
+
+            p.pop();
+        }
+
+        else if(st == '#')
+        {
+            while(!p.empty())
+            {
+                cout << p.top();
+                p.pop();
+            }
+
+            break;
+        }
+    }
+
+    return 0;
+}
+
+
