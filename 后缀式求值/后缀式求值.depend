@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1538558465 source:c:\赵静 code blocks\后缀式求值\main.cpp
+	<stdio.h>
+	<string.h>
+	<iostream>
+
