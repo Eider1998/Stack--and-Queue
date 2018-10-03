@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1538549869 source:c:\赵静 code blocks\进制转化\main.cpp
+	<iostream>
+	<stdio.h>
+	<string.h>
+	<stack>
+
