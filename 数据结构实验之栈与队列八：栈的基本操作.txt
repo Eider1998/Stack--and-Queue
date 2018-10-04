@@ -1,0 +1,69 @@
+#include<cstdio>
+#include<cstdlib>
+#include<iostream>
+using namespace std;
+
+int main(void)
+{
+    int t, i, m, n, x, ans, stack[1001];
+    char s[1001];
+
+    scanf("%d", &t);
+    while(t--)
+    {
+        scanf("%d %d", &m, &n);
+        ans = 0;
+        for(i = 0; i < n; i++)
+        {
+            scanf("%s", s);
+
+            if(s[0] == 'P')
+            {
+                scanf("%d", &x);
+                if(ans < m)
+                {
+                    stack[++ans] = x;
+                }
+
+                else
+                {
+                    cout << 'F' << endl;
+                }
+            }
+
+            else if(s[0] == 'O')
+            {
+                if(ans == 0)
+                {
+                    cout << 'E' << endl;
+                }
+
+                else
+                {
+                    printf("%d\n", stack[ans--]);
+                }
+            }
+
+            else if(s[0] == 'A')
+            {
+                if(ans == 0)
+                {
+                    cout << 'E' << endl;
+                }
+
+                else
+                {
+                    printf("%d\n", stack[ans]);
+                }
+            }
+
+        }
+
+        if(t != 0)
+        {
+            printf("\n");
+        }
+    }
+
+    return 0;
+}
