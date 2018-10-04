@@ -1,0 +1,60 @@
+#include<iostream>
+#include<cstdlib>
+#include<cstring>
+using namespace std;
+
+int visit[10][10], a[10][10];
+int n, m;
+int k;
+
+void dfs(int x, int y)
+{
+    if(x < 0 || x > n - 1 || y < 0 || y > m - 1 || visit[x][y] || a[x][y])
+    {
+        return ;
+    }
+
+    if(x == n - 1 && y == m - 1)
+    {
+        k++;
+        return;
+    }
+
+    else
+    {
+        visit[x][y] = 1;
+        dfs(x - 1, y);
+        dfs(x, y + 1);
+        dfs(x + 1, y);
+        dfs(x, y - 1);
+        visit[x][y] = 0;
+    }
+}
+
+int main(void)
+{
+    int i, j, t;
+    cin >> t;
+    memset(visit, 1, sizeof(visit));
+
+    while(t--)
+    {
+        k = 0;
+        cin >> n >> m;
+
+        for(i = 0; i < n; i++)
+        {
+            for(j = 0; j < m; j++)
+            {
+                cin >> a[i][j];
+                visit[i][j] = 0;
+            }
+        }
+
+        dfs(0, 0);
+        cout << k << endl;
+
+    }
+
+    return 0;
+}
