@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1538624471 source:c:\赵静 code blocks\下一较大值二\main.cpp
+	<stdio.h>
+	<string.h>
+	<iostream>
+	<stack>
+
