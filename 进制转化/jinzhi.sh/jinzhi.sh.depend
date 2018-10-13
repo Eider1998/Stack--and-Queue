@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1539400565 source:c:\ут╬╡ code blocks\jinzhi.sh\main.cpp
+	<cstdio>
+	<iostream>
+	<cstring>
+	<cstdlib>
+	<stack>
+	<stdio.h>
+	<stdlib.h>
+
