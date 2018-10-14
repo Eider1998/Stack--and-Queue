@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1539507614 source:c:\赵静 code blocks\下一最大值stack\main.cpp
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<iostream>
+
